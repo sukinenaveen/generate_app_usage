@@ -1,0 +1,20 @@
+import pandas as pd
+import numpy as np
+df = pd.read_csv("day02_usage.csv")
+Chat = df["Chat"].to_numpy()
+Video = df["Video"].to_numpy()
+Study = df["Study"].to_numpy()
+Games = df["Games"].to_numpy()
+print(len(Chat))
+print(Chat.sum())
+print(Video.sum())
+print(Study.sum())
+print(Games.sum())
+print(round(Chat.mean(), 1))
+print(round(Video.mean(), 1))
+print(round(Study.mean(), 1))
+print(round(Games.mean(), 1))
+print(max([Chat.max(), Video.max(), Study.max(), Games.max()]))
+new_array=Study-Games
+print(new_array.argmax()+1)
+print(new_array.argmin()+1)
